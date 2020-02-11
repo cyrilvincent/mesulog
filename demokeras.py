@@ -1,4 +1,27 @@
 import keras
+import numpy as np
+
+class TwoImageGenerator(keras.utils.Sequence):
+
+    def __init__(self, generator1, generator2):
+        self.generator1 = generator1
+        self.generator2 = generator2
+
+    def __getitem__(self, i):
+        X1i = self.generator1[i]
+        X2i = self.generator2[i]
+        imgFirst = X1i[0]
+        imgSecond = X2i[0]
+        imgi = np.zeros((len(imgFirst), 64, 64, 2), dtype=np.float32)
+        for n in range(0, len(imgFirst)):
+            img1 = imgFirst[n]
+            img2 = imgSecond[n]
+            imgi[n] = np.dstack((img1, img2))
+        return imgi, X2i[1]
+
+    def __len__(self):
+        return len(self.generator1)
+
 
 trainset = keras.preprocessing.image.ImageDataGenerator(rescale=1./255, validation_split=0.2)
 #validationset = keras.preprocessing.image.ImageDataGenerator(rescale=1./255)
@@ -114,11 +137,11 @@ model.compile(loss='categorical_crossentropy',
 #     )
 
 model.fit(
-            twoImageGenerator(trainGenerator, trainGenerator2),
+            TwoImageGenerator(trainGenerator, trainGenerator2),
             epochs=30,
-            validation_data=twoImageGenerator(validationGenerator, validationGenerator2),
-            steps_per_epoch=nbSample // batchSize,
-            validation_steps=(nbSample * 0.2) // batchSize
+            validation_data=TwoImageGenerator(validationGenerator, validationGenerator2),
+            # steps_per_epoch=nbSample // batchSize,
+            # validation_steps=(nbSample * 0.2) // batchSize
     )
 
 # Other method
