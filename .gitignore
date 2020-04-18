@@ -3,8 +3,7 @@
 **/build/**
 **/__pycache__/**
 **/obj/**
-**/.vs/**
+**/.*/**
 **/bin/**
-**/.idea/**
 **/cyrilmodel.h5/**
 **/lib/**
