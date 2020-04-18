@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "eucoiNJqVLeKsQYmUH73L7Xg4MgPLfgc5qBhmZURGs9Bq5XzU9kDCeC3yCsnJRYYpg780Qsg9hA7kNlkfUMYug==",
+  "dgSpecHash": "/eZlaDVgm3z1xNxNFmE8tXtoOuVRv79hMTbE3bpNHW9OLzMD+4A9/zXscjyNsIedu0M2kYDHD0neCTbiJk4gcQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\conta\\CVC\\ATP\\Mesulog\\GitMesulog\\PlayerConsole\\CipherModel\\CipherModel.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\conta\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",
+    "C:\\Users\\conta\\.nuget\\packages\\numsharp.lite\\0.1.7\\numsharp.lite.0.1.7.nupkg.sha512",
+    "C:\\Users\\conta\\.nuget\\packages\\protobuf.text\\0.4.0\\protobuf.text.0.4.0.nupkg.sha512",
+    "C:\\Users\\conta\\.nuget\\packages\\scisharp.tensorflow.redist\\1.15.1\\scisharp.tensorflow.redist.1.15.1.nupkg.sha512",
+    "C:\\Users\\conta\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\conta\\.nuget\\packages\\tensorflow.net\\0.15.1\\tensorflow.net.0.15.1.nupkg.sha512"
+  ],
   "logs": []
 }

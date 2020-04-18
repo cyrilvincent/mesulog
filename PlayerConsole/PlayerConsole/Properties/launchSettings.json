@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PlayerConsole": {
+      "commandName": "Project",
+      "commandLineArgs": "img/test2.png"
+    }
+  }
+}

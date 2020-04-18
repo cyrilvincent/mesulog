@@ -7,12 +7,6 @@ C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\
 C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\Protobuf.Text.dll
 C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\TensorFlow.NET.dll
 C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\obj\Debug\netcoreapp3.1\PlayerConsole.csproj.CopyComplete
-C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\cnnmodel.pb
-C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\img\test1.png
-C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\img\test2.png
-C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\img\test3.png
-C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\img\test4.png
-C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\img\test5.png
 C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\PlayerConsole.deps.json
 C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\PlayerConsole.runtimeconfig.json
 C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\PlayerConsole.runtimeconfig.dev.json
@@ -27,4 +21,9 @@ C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\obj\Debug\
 C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\obj\Debug\netcoreapp3.1\PlayerConsole.dll
 C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\obj\Debug\netcoreapp3.1\PlayerConsole.pdb
 C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\obj\Debug\netcoreapp3.1\PlayerConsole.genruntimeconfig.cache
+C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\img\test1.png
+C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\img\test2.png
+C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\img\test3.png
+C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\img\test4.png
+C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\img\test5.png
 C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\model_689297.dll
