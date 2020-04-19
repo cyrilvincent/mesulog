@@ -37,3 +37,10 @@ model = svm.SVC(C=0.1, kernel="linear")
 model.fit(xtrain, ytrain)
 score = model.score(xtest, ytest)
 print(score)
+
+import pickle
+with open("svm.pickle","wb") as f:
+    f.write(pickle.dumps(model))
+
+predict = model.predict(xtest)
+print(predict)

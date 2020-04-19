@@ -38,3 +38,7 @@ model = rf.RandomForestClassifier()
 model.fit(xtrain, ytrain)
 score = model.score(xtest, ytest)
 print(score)
+
+import pickle
+with open("rf.pickle","wb") as f:
+    f.write(pickle.dumps(model))
