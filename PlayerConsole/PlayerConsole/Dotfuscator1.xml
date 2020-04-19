@@ -3,6 +3,7 @@
 <!DOCTYPE dotfuscator SYSTEM "http://www.preemptive.com/dotfuscator/dtd/dotfuscator_v2.5.dtd">
 <dotfuscator version="2.3">
   <global>
+    <option>suppressildasm</option>
     <option>debugauto</option>
   </global>
   <input>
@@ -11,8 +12,6 @@
       <inputassembly refid="2bfc2ec4-7f55-4a42-93a6-9a1cc6086729">
         <option>honoroas</option>
         <option>stripoa</option>
-        <option>library</option>
-        <option>transformxaml</option>
         <file dir="C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Release\netcoreapp3.1" name="PlayerConsole.dll" />
       </inputassembly>
     </asmlist>
@@ -22,6 +21,7 @@
   </output>
   <renaming>
     <option>xmlserialization</option>
+    <option>explicitoverrides</option>
     <mapping>
       <mapoutput overwrite="false">
         <file dir="${configdir}\Dotfuscated" name="Map.xml" />

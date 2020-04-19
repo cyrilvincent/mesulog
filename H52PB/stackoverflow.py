@@ -37,4 +37,4 @@ model = keras.models.load_model("cnnmodel.h5")
 frozen_graph = freeze_session(K.get_session(),
                               output_names=[out.op.name for out in model.outputs])
 tf.train.write_graph(frozen_graph, ".", "my_model.pb", as_text=False)
-# Well tested
+# Well tested with TF1.15.2 in Python but not in .NET (only TF1.13)

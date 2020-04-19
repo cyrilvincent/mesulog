@@ -13,7 +13,7 @@ namespace PlayerConsole
             graph.Import(bytes, "");
             Operation operationIn = graph.OperationByName("conv2d_1_input");
             Operation operationOut = graph.OperationByName("dense_2/Softmax");
-            NDArray ndArray = this.ReadTensorFromImageFile(file);
+            NDArray ndArray = ReadTensorFromImageFile(file);
             using (Session session = tf.Session(graph))
                 return session.run(operationOut.outputs, (FeedItem)(operationIn.outputs[0], ndArray));
         }

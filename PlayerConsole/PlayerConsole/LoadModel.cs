@@ -8,13 +8,17 @@ namespace PlayerConsole
 {
     public static class LoadModel
     {
+        private static readonly string iv = "UfZLK02kp5g=";
         public static byte[] Load()
         {
-            byte[] rgbKey = Convert.FromBase64String("Vincent"[0].ToString() + ("dNqq/ZYcrlJ" + "Matis".ToLower()[0].ToString() + "kTYF" + (5.ToString() + "Elisa".ToLower()[0].ToString() + "+Crj+hBqZkWOT")));
-            byte[] rgbIV = Convert.FromBase64String("UfZLK02kp5g=");
+            byte[] sig = typeof(LoadModel).Assembly.GetName().GetPublicKeyToken();
+            byte[] k = Convert.FromBase64String("Vincent"[0].ToString() + ("dNqq/ZYcrlJ" + "Matis".ToLower()[0].ToString() + "kTYF" + (5.ToString() + "Elisa".ToLower()[0].ToString() + "+Crj+hBqZkWOT")));
+            for (int i = 0; i < sig.Length; i++)
+                k[i + 8] = sig[i];
+            byte[] IV = Convert.FromBase64String(iv);
             string str = Directory.EnumerateFiles(".", "model_*.dll").First();
-            int size = Convert.ToInt32(new Regex("model_(\\d+).dll").Matches(str).First<Match>().Groups[1].Value);
-            CryptoStream cryptoStream = new CryptoStream((Stream)File.OpenRead(str), new TripleDESCryptoServiceProvider().CreateDecryptor(rgbKey, rgbIV), CryptoStreamMode.Read);
+            int size = Convert.ToInt32(new Regex("model_(\\d+).dll").Matches(str).First().Groups[1].Value);
+            CryptoStream cryptoStream = new CryptoStream(File.OpenRead(str), new TripleDESCryptoServiceProvider().CreateDecryptor(k, IV), CryptoStreamMode.Read);
             byte[] buffer = new byte[size];
             cryptoStream.Read(buffer, 0, size - 1);
             cryptoStream.Close();

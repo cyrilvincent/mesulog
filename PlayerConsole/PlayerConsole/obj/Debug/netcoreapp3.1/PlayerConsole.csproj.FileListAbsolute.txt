@@ -26,4 +26,3 @@ C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\
 C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\img\test3.png
 C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\img\test4.png
 C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\img\test5.png
-C:\Users\conta\CVC\ATP\Mesulog\GitMesulog\PlayerConsole\PlayerConsole\bin\Debug\netcoreapp3.1\model_689297.dll

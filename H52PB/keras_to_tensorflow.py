@@ -180,6 +180,5 @@ def main(args):
 
 if __name__ == "__main__":
     app.run(main)
-# Well tested with TF1.13
-# TODO : Test with TF 1.15
+# Well tested with TF1.15.2
 # Usage = keras_to_tensorflow.py --input_model=cnnmodel.h5 --output_model=cnnmodel.pb
