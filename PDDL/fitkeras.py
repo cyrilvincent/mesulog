@@ -112,6 +112,7 @@ model.add(keras.layers.MaxPooling2D(pool_size=(2, 2)))
 #Dense
 model.add(keras.layers.Flatten())
 # 4096
+
 model.add(keras.layers.Dense(64, activation="relu"))
 model.add(keras.layers.Dropout(0.5))
 model.add(keras.layers.Dense(5, activation="softmax"))
