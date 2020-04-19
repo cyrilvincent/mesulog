@@ -16,6 +16,7 @@ namespace PlayerConsole
             NDArray ndArray = ReadTensorFromImageFile(file);
             using (Session session = tf.Session(graph))
                 return session.run(operationOut.outputs, (FeedItem)(operationIn.outputs[0], ndArray));
+            
         }
 
         private NDArray ReadTensorFromImageFile(
