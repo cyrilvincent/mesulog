@@ -17,12 +17,26 @@ model = newModel
 model.build()
 
 bn = model.predict(im,1)[0]
+bnv = bn
 bn = bn.reshape(1,25088)
 
 import pickle
-with open("data/vggsvm.pickle", "rb") as f: # or vggrf.pickle or vggxgb.pickle
+with open("data/vggsvm.pickle", "rb") as f:
     model = pickle.loads(f.read())
-
 predict = model.predict(bn)
 print(predict)
+with open("data/vggrf.pickle", "rb") as f:
+    model = pickle.loads(f.read())
+predict = model.predict(bn)
+print(predict)
+
+import pandas as pd
+bn = bnv
+bn = np.insert(bn,0,np.nan)
+bn = pd.DataFrame(bn.reshape(1,len(bn))).iloc[:,1:]
+with open("data/vggxgb.pickle", "rb") as f:
+    model = pickle.loads(f.read())
+predict = model.predict(bn)
+print(predict)
+
 

@@ -1,11 +1,9 @@
-import numpy as np
-import sklearn
 import sklearn.model_selection as ms
 import pandas as pd
 
 # https://github.com/mdabros/SharpLearning
 
-dataframe = pd.read_csv("data/vgg16bn.csv")
+dataframe = pd.read_csv("data/vgg16bn.csv", header=None)
 print(dataframe.head())
 x = dataframe.iloc[:,1:]
 y = dataframe.iloc[:,0]

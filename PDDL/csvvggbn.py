@@ -1,17 +1,12 @@
-import numpy as np
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dropout, Flatten, Dense
-from tensorflow.keras import applications
-import json
+import tensorflow.keras as keras
 
-trainset = ImageDataGenerator(rescale=1./255)
+trainset = keras.preprocessing.image.ImageDataGenerator(rescale=1./255)
 
-model = applications.vgg16.VGG16(include_top=False, weights="imagenet", input_shape=(224, 224, 3))
-newModel = Sequential()
+model = keras.applications.vgg16.VGG16(include_top=False, weights="imagenet", input_shape=(224, 224, 3))
+newModel = keras.Sequential()
 for l in model.layers:
     newModel.add(l)
-newModel.add(Flatten())
+newModel.add(keras.layers.Flatten())
 model = newModel
 model.build()
 print(model.summary())
@@ -39,6 +34,11 @@ with open('data/vgg16bn.csv', 'w') as f:
         s += "\n"
         f.write(s)
         #print(s, end="")
+
+import csv
+with open("data/vgg16bn.csv") as f:
+    l = list(csv.reader(f))
+    print(len(l))
 
 
 

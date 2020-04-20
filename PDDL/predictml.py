@@ -7,8 +7,15 @@ im = np.asarray(im)
 print(im.shape)
 im = im.reshape(1,64*64) / 255
 import pickle
-with open("data/svm.pickle", "rb") as f: # or rf.pickle or xgb.pickle
+with open("data/svm.pickle", "rb") as f:
     model = pickle.loads(f.read())
-
+predict = model.predict(im)
+print(predict)
+with open("data/rf.pickle", "rb") as f:
+    model = pickle.loads(f.read())
+predict = model.predict(im)
+print(predict)
+with open("data/xgb.pickle", "rb") as f:
+    model = pickle.loads(f.read())
 predict = model.predict(im)
 print(predict)

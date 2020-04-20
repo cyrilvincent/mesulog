@@ -1,8 +1,8 @@
 import keras
 import numpy as np
+import sklearn.metrics as metrics
 
 trainset = keras.preprocessing.image.ImageDataGenerator(rescale=1./255, validation_split=0.2)
-#validationset = keras.preprocessing.image.ImageDataGenerator(rescale=1./255)
 batchSize = 4
 nbSample = 287
 
@@ -15,7 +15,6 @@ trainGenerator = trainset.flow_from_directory(
         class_mode="categorical",
         seed=1
         )
-       batch_size=batchSize)
 
 validationGenerator = trainset.flow_from_directory(
         r'C:\Users\conta\CVC\ATP\Mesulog\191219_baseImages_tester\_BaseReference',
@@ -58,11 +57,21 @@ model.compile(loss='categorical_crossentropy',
 
 model.fit(
             trainGenerator,
-            epochs=30,
+            epochs=20,
             validation_data=validationGenerator,
     )
 
 
 model.save('data/cnnmodel.h5')
 
+validationGenerator = trainset.flow_from_directory(
+        r'C:\Users\conta\CVC\ATP\Mesulog\191219_baseImages_tester\_BaseReference',
+        target_size=(64, 64),
+        subset = 'validation',
+        color_mode="grayscale",
+        batch_size=1,
+        class_mode="categorical",
+        seed=1,
+        shuffle=False,
+        )
 

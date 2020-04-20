@@ -1,7 +1,9 @@
+import numpy as np
+import sklearn
 import sklearn.model_selection as ms
 import pandas as pd
 
-dataframe = pd.read_csv("data/vgg16bn.csv", header=None)
+dataframe = pd.read_csv("data/rnnbn.csv", header=None)
 print(dataframe.head())
 x = dataframe.iloc[:,1:]
 y = dataframe.iloc[:,0]
@@ -17,7 +19,7 @@ score = model.score(xtest, ytest)
 print(score)
 
 import pickle
-with open("data/vggsvm.pickle", "wb") as f:
+with open("data/rnnsvm.pickle", "wb") as f:
     f.write(pickle.dumps(model))
 
 predict = model.predict(xtest)
