@@ -13,7 +13,7 @@ softmax = lambda x : np.exp(x)/sum(np.exp(x))
 linsm = lambda x : x/sum(x)
 geosm = lambda x : x**2/sum(x**2)
 
-rvalues = np.array([0.84, 0.91, 0.92, 0.94])
+rvalues = np.array([0.47, 0.33, 0.63, 0.56, 0.82, 0.84])
 print(f(rvalues))
 sm = softmax(f(rvalues))
 print((sm * 100).astype(int))

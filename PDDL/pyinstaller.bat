@@ -1,1 +1,1 @@
-venv\Scripts\pyinstaller.exe --noconfirm predict.spec
+venv\Scripts\pyinstaller.exe --noconfirm data/predict.spec

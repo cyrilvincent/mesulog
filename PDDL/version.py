@@ -12,5 +12,5 @@ print(tf.__version__)
 print(keras.__version__)
 print(astor.__version__)
 
-model = keras.models.load_model("cnnmodel.h5")
+model = keras.models.load_model("data/cnnmodel.h5")
 model.summary()

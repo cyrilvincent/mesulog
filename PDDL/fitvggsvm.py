@@ -3,7 +3,7 @@ import sklearn
 import sklearn.model_selection as ms
 import pandas as pd
 
-dataframe = pd.read_csv("vgg16-bottleneck-train.csv")
+dataframe = pd.read_csv("data/vgg16bn.csv")
 print(dataframe.head())
 x = dataframe.iloc[:,1:]
 y = dataframe.iloc[:,0]
@@ -19,7 +19,7 @@ score = model.score(xtest, ytest)
 print(score)
 
 import pickle
-with open("vggsvm.pickle","wb") as f:
+with open("data/vggsvm.pickle", "wb") as f:
     f.write(pickle.dumps(model))
 
 predict = model.predict(xtest)

@@ -5,7 +5,7 @@ import pandas as pd
 
 # https://github.com/mdabros/SharpLearning
 
-dataframe = pd.read_csv("vgg16-bottleneck-train.csv")
+dataframe = pd.read_csv("data/vgg16bn.csv")
 print(dataframe.head())
 x = dataframe.iloc[:,1:]
 y = dataframe.iloc[:,0]
@@ -21,7 +21,7 @@ score = model.score(xtest, ytest)
 print(score)
 
 import pickle
-with open("vggxgb.pickle","wb") as f:
+with open("data/vggxgb.pickle", "wb") as f:
     f.write(pickle.dumps(model))
 
 predict = model.predict(xtest)

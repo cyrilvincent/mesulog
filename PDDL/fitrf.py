@@ -1,6 +1,5 @@
 import keras
 import numpy as np
-import sklearn
 import sklearn.model_selection as ms
 
 #https://docs.microsoft.com/en-us/archive/msdn-magazine/2019/march/csharp-support-vector-machines-using-csharp
@@ -40,5 +39,5 @@ score = model.score(xtest, ytest)
 print(score)
 
 import pickle
-with open("rf.pickle","wb") as f:
+with open("data/rf.pickle","wb") as f:
     f.write(pickle.dumps(model))

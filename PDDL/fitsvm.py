@@ -39,7 +39,7 @@ score = model.score(xtest, ytest)
 print(score)
 
 import pickle
-with open("svm.pickle","wb") as f:
+with open("data/svm.pickle", "wb") as f:
     f.write(pickle.dumps(model))
 
 predict = model.predict(xtest)

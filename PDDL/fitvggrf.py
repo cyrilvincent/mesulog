@@ -5,7 +5,7 @@ import pandas as pd
 
 # http://accord-framework.net/docs/html/T_Accord_MachineLearning_DecisionTrees_RandomForest.htm
 # https://github.com/mdabros/SharpLearning
-dataframe = pd.read_csv("vgg16-bottleneck-train.csv")
+dataframe = pd.read_csv("data/vgg16bn.csv")
 print(dataframe.head())
 x = dataframe.iloc[:,1:]
 y = dataframe.iloc[:,0]
@@ -21,7 +21,7 @@ score = model.score(xtest, ytest)
 print(score)
 
 import pickle
-with open("vggrf.pickle","wb") as f:
+with open("data/vggrf.pickle", "wb") as f:
     f.write(pickle.dumps(model))
 
 predict = model.predict(xtest)
