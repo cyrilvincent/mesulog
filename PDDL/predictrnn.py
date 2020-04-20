@@ -14,7 +14,6 @@ x = keras.layers.Flatten()(x)
 model = keras.models.Model(inputs=model.input, outputs=x)
 
 bn = model.predict(im,1)[0]
-bnv = bn
 bn = bn.reshape(1,bn.shape[0])
 
 import pickle
@@ -27,10 +26,6 @@ with open("data/rnnrf.pickle", "rb") as f:
 predict = model.predict(bn)
 print(predict)
 
-import pandas as pd
-bn = bnv
-bn = np.insert(bn,0,np.nan)
-bn = pd.DataFrame(bn.reshape(1,len(bn))).iloc[:,1:]
 with open("data/rnnxgb.pickle", "rb") as f:
     model = pickle.loads(f.read())
 predict = model.predict(bn)

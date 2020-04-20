@@ -1,12 +1,14 @@
 import sklearn.model_selection as ms
 import pandas as pd
+import numpy as np
 
 # https://github.com/mdabros/SharpLearning
 
+np.random.seed(1)
 dataframe = pd.read_csv("data/vgg16bn.csv", header=None)
 print(dataframe.head())
-x = dataframe.iloc[:,1:]
-y = dataframe.iloc[:,0]
+x = dataframe.iloc[:,1:].values # XGB Pandas Index PB
+y = dataframe.iloc[:,0].values
 
 print(x.shape)
 print(y.shape)

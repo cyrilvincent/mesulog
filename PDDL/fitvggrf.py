@@ -1,8 +1,10 @@
 import sklearn.model_selection as ms
 import pandas as pd
+import numpy as np
 
 # http://accord-framework.net/docs/html/T_Accord_MachineLearning_DecisionTrees_RandomForest.htm
 # https://github.com/mdabros/SharpLearning
+np.random.seed(1)
 dataframe = pd.read_csv("data/vgg16bn.csv", header=None)
 print(dataframe.head())
 x = dataframe.iloc[:,1:]

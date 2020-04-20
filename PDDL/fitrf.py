@@ -4,6 +4,7 @@ import sklearn.model_selection as ms
 
 #https://docs.microsoft.com/en-us/archive/msdn-magazine/2019/march/csharp-support-vector-machines-using-csharp
 
+np.random.seed(1)
 trainset = keras.preprocessing.image.ImageDataGenerator(rescale=1./255)
 trainGenerator = trainset.flow_from_directory(
         r'C:\Users\conta\CVC\ATP\Mesulog\191219_baseImages_tester\_BaseReference',

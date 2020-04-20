@@ -1,6 +1,8 @@
 import sklearn.model_selection as ms
 import pandas as pd
+import numpy as np
 
+np.random.seed(1)
 dataframe = pd.read_csv("data/vgg16bn.csv", header=None)
 print(dataframe.head())
 x = dataframe.iloc[:,1:]
