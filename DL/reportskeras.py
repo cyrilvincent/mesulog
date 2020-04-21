@@ -17,7 +17,7 @@ validationGenerator = trainset.flow_from_directory(
         batch_size=1, # important
         class_mode="categorical",
         seed=seed,
-        shuffle=False, #important
+        shuffle=False, #important, ordre alphabetique
         )
 pred = model.predict(validationGenerator)
 pred = np.argmax(pred, axis=1)
@@ -35,7 +35,7 @@ plt.xlabel('True')
 plt.ylabel('Predicted')
 plt.show()
 
-def plot_classification_report(cr, title='Classification report ', with_avg_total=True, cmap=plt.cm.Blues):
+def plot_classification_report(cr, title='Classification report', with_avg_total=True, cmap=plt.cm.Blues):
     lines = cr.split('\n')
     classes = []
     plotMat = []

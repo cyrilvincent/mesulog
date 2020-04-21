@@ -7,18 +7,18 @@ targetSize = (64,64)
 seed = 1
 batchSize = 4 #2,4,8,16
 
-trainset = keras.preprocessing.image.ImageDataGenerator(rescale=1./255, validation_split=0.2)
+trainset = keras.preprocessing.image.ImageDataGenerator(rescale=1./255, validation_split=0.2) #Facultatif sur petit jeu de données
 trainGenerator = trainset.flow_from_directory(
         path,
         target_size=targetSize,
-        subset = 'training',
+        subset = 'training', #Facultatif sur petit jeu de données
         color_mode="grayscale",
         batch_size=batchSize,
         class_mode="categorical",
         seed=seed
         )
 
-validationGenerator = trainset.flow_from_directory(
+validationGenerator = trainset.flow_from_directory( #Facultatif sur petit jeu de données
         path,
         target_size=targetSize,
         subset = 'validation',
@@ -58,7 +58,7 @@ model.compile(loss='categorical_crossentropy',
 model.fit(
             trainGenerator,
             epochs=20,
-            validation_data=validationGenerator,
+            validation_data=validationGenerator, #Facultatif sur petit jeu de données
     )
 
 
