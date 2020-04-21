@@ -1,1 +1,0 @@
-https://github.com/fo40225/tensorflow-windows-wheel
