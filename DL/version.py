@@ -9,6 +9,3 @@ print(keras.__version__)
 print(sklearn.__version__)
 print(pandas.__version__)
 print(astor.__version__)
-
-model = keras.models.load_model("data/cnnmodel.h5")
-model.summary()
