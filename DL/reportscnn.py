@@ -13,7 +13,7 @@ trainset = keras.preprocessing.image.ImageDataGenerator(rescale=1./255, validati
 validationGenerator = trainset.flow_from_directory(
         path,
         target_size=targetSize,
-        #subset = 'training', # A enlever si on veut le jeu en entier
+        #subset = 'validation', # A enlever si on veut le jeu en entier
         color_mode="grayscale",
         batch_size=batchSize,
         class_mode="categorical",

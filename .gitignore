@@ -7,5 +7,7 @@
 **/bin/**
 **/cyrilmodel.h5/**
 **/lib/**
-*.csv
-*.pickle
+**/*.csv
+**/*.pickle
+**/*.h5
+

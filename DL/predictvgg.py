@@ -1,29 +1,16 @@
-import numpy as np
 import tensorflow.keras as keras
-from PIL import Image
+import numpy as np
 
-im = Image.open("img/small/c1/img_6.jpg")
-im = im.resize((224,224))
-im = np.asarray(im)
-print(im.shape)
-im = im.reshape(1,224,224,3) / 255
+model = keras.models.load_model("data/vggmodel.h5")
+model.summary()
 
-model = keras.applications.vgg16.VGG16(include_top=False, weights="imagenet", input_shape=(224, 224, 3))
-newModel = keras.Sequential()
-for l in model.layers:
-    newModel.add(l)
-newModel.add(keras.layers.Flatten())
-model = newModel
-model.build()
-
-bn = model.predict(im,1)[0]
-bn = bn.reshape(1,25088)
-
-import pickle
-with open("data/vggsvm.pickle", "rb") as f:
-    model = pickle.loads(f.read())
-predict = model.predict(bn)
-print(predict)
-
-
+img = keras.preprocessing.image.load_img("img/small/c1/img_6.jpg", target_size=(224, 224))
+img = keras.preprocessing.image.img_to_array(img)
+img *= 1. / 255
+img = img.reshape((1, img.shape[0], img.shape[1], img.shape[2]))
+res = model.predict(img)
+print(res)
+res = res[0]
+print(np.argmax(res))
+print((res * 100).round().astype(int))
 

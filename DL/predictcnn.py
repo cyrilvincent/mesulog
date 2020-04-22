@@ -14,3 +14,7 @@ res = res[0]
 print(np.argmax(res))
 print((res * 100).round().astype(int))
 
+import matplotlib.pyplot as plt
+plt.bar(np.arange(len(res)), res)
+plt.show()
+
