@@ -5,6 +5,7 @@ import sklearn.metrics as metrics
 seed = 1
 path = r'img\small'
 targetSize = (64,64)
+batchSize = 16
 
 model = keras.models.load_model('data/cnnmodel.h5')
 
@@ -14,7 +15,7 @@ validationGenerator = trainset.flow_from_directory(
         target_size=targetSize,
         #subset = 'training', # A enlever si on veut le jeu en entier
         color_mode="grayscale",
-        batch_size=1, # important
+        batch_size=batchSize,
         class_mode="categorical",
         seed=seed,
         shuffle=False, #important, ordre alphabetique

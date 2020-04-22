@@ -61,7 +61,7 @@ model.fit(
             validation_data=validationGenerator, #Facultatif sur petit jeu de données
     )
 
-
 model.save('data/cnnmodel.h5')
+predict = model.predict(validationGenerator)
 
 
