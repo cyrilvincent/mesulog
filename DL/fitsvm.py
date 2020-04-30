@@ -23,7 +23,7 @@ x = []
 y = []
 for im in trainGenerator.filenames:
     g = trainGenerator.next()
-    im = g[0][0].reshape(64*64)
+    im = g[0][0].reshape(64*64) # Peut être facultatif
     label = g[1].argmax()
     x.append(im)
     y.append(label)

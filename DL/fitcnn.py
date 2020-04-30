@@ -32,13 +32,13 @@ validationGenerator = trainset.flow_from_directory( #Facultatif sur petit jeu de
 model = keras.models.Sequential()
 model.add(keras.layers.Conv2D(16, (3, 3), input_shape=(64, 64, 1), padding="same")) # padding facultatif
 model.add(keras.layers.MaxPooling2D(pool_size=(2, 2)))
-# 32, 32, 32
+# 32, 32, 16
 
 model.add(keras.layers.Conv2D(32, (3, 3), padding="same"))
 model.add(keras.layers.MaxPooling2D(pool_size=(2, 2)))
 # 16, 16, 32
 
-model.add(keras.layers.Conv2D(64, (3, 3), padding="same"))
+model.add(keras.layers.Conv2D(64, (3, 3), padding="same")) #32
 model.add(keras.layers.MaxPooling2D(pool_size=(2, 2)))
 # 8, 8, 64
 
@@ -48,7 +48,7 @@ model.add(keras.layers.Flatten())
 
 model.add(keras.layers.Dropout(0.5)) #Facultatif pour les petits jeux de données
 model.add(keras.layers.Dense(64)) # Peut être augmenté avec un gros jeu de données, voir ajouter une couche
-model.add(keras.layers.Dropout(0.5))
+model.add(keras.layers.Dropout(0.5)) # 0.2 0.1
 model.add(keras.layers.Dense(5, activation="softmax"))
 
 model.compile(loss='categorical_crossentropy',
