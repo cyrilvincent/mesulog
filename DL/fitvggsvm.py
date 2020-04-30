@@ -5,8 +5,8 @@ import numpy as np
 np.random.seed(1)
 dataframe = pd.read_csv("data/vgg16bn.csv", header=None)
 print(dataframe.head())
-x = dataframe.iloc[:,2:].values
-y = dataframe.iloc[:,1].values
+x = dataframe.iloc[:,1:]
+y = dataframe.iloc[:,0]
 
 print(x.shape)
 print(y.shape)
@@ -20,7 +20,6 @@ print(score)
 
 import pickle
 with open("data/vggsvm.pickle", "wb") as f:
-    pickle.dump(model, f)
+    f.write(pickle.dumps(model))
 
 predict = model.predict(xtest)
-print(predict - ytest)

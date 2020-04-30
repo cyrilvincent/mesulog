@@ -8,6 +8,7 @@ im = np.asarray(im)
 print(im.shape)
 im = im.reshape(1,224,224,3) / 255
 
+
 model = keras.applications.vgg16.VGG16(include_top=False, weights="imagenet", input_shape=(224, 224, 3))
 newModel = keras.Sequential()
 for l in model.layers:

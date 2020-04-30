@@ -1,7 +1,7 @@
 import tensorflow.keras as keras
 
 path = r'img\small'
-targetSize = (224,224)
+targetSize = (224, 224)
 seed = 1
 
 trainset = keras.preprocessing.image.ImageDataGenerator(rescale=1./255)
@@ -24,17 +24,14 @@ trainGenerator = trainset.flow_from_directory(
         shuffle=False,
         )
 
-bn = model.predict(trainGenerator)
+bottleneck = model.predict(trainGenerator)
 
 print("Save CSV")
 trainGenerator.reset()
-ix = 0
 with open('data/vgg16bn.csv', 'w') as f:
-    for item in bn:
+    for item in bottleneck:
         g = trainGenerator.next()
-        s = trainGenerator.filenames[ix]
-        ix+=1
-        s += f",{g[1].argmax()}"
+        s = str(g[1].argmax())
         print(s)
         for i in item:
             s+=f",{str(i)}"
