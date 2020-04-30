@@ -1,42 +1,40 @@
 import tensorflow.keras as keras
+import pandas as pd
 import sklearn.metrics as metrics
+import sklearn.model_selection as ms
 import numpy as np
 
 path = r'img\small'
-targetSize = (64,64)
+dataframe = pd.read_csv("data/vgg16bn.csv",header = None)
+print(dataframe)
+x = dataframe.iloc[:,1:]
+y = dataframe.iloc[:,0]
 
-trainset = keras.preprocessing.image.ImageDataGenerator(rescale=1./255, validation_split=0.2)
-trainGenerator = trainset.flow_from_directory(
-        path,
-        target_size=targetSize,
-        #subset = 'validation', # A enlever si on veut le jeu en entier
-        color_mode="grayscale",
-        batch_size=1,
-        class_mode="categorical",
-        )
-x = []
-y = []
-for im in trainGenerator.filenames:
-    g = trainGenerator.next()
-    im = g[0][0].reshape(targetSize[0]*targetSize[1])
-    label = g[1].argmax()
-    x.append(im)
-    y.append(label)
-x = np.array(x)
-y = np.array(y)
 print(x.shape)
 print(y.shape)
 
 import pickle
-with open("data/svm.pickle", "rb") as f:
+with open("data/vggsvm.pickle", "rb") as f:
     model = pickle.load(f)
+
 pred = model.predict(x)
 
+trainset = keras.preprocessing.image.ImageDataGenerator(rescale=1./255)
+validationGenerator = trainset.flow_from_directory(
+        path,
+        target_size=(64, 64),
+        color_mode="grayscale",
+        batch_size=1,
+        class_mode="categorical",
+        seed=1,
+        shuffle=False,
+        )
+
 print('Confusion Matrix')
-cm = metrics.confusion_matrix(y, pred)
+cm = metrics.confusion_matrix(validationGenerator.classes, pred)
 print(cm)
 print('Classification Report')
-print(metrics.classification_report(y, pred))
+print(metrics.classification_report(validationGenerator.classes, pred))
 
 import matplotlib.pyplot as plt
 import seaborn
@@ -76,5 +74,5 @@ def plot_classification_report(cr, title='Classification report ', with_avg_tota
     plt.ylabel('Classes')
     plt.xlabel('Measures')
 
-plot_classification_report(metrics.classification_report(y, pred))
+plot_classification_report(metrics.classification_report(validationGenerator.classes, pred))
 plt.show()
