@@ -8,8 +8,8 @@ targetSize = (64,64)
 
 dataframe = pd.read_csv("data/vgg16bn.csv",header = None)
 print(dataframe)
-x = dataframe.iloc[:,2:].values
-y = dataframe.iloc[:,1].values
+x = dataframe.iloc[:,1:].values
+y = dataframe.iloc[:,0].values
 
 print(x.shape)
 print(y.shape)
