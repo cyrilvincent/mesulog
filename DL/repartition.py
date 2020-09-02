@@ -15,7 +15,7 @@ softmax = lambda x : np.exp(x)/sum(np.exp(x))
 linsm = lambda x : x/sum(x)
 geosm = lambda x : x**2/sum(x**2)
 
-rvalues = np.array([0.8,0.89,0.79,0.75]) #,0.59,0.69]) #Deterministe, CNN PR, CNN PS, VGG PR, VGG PS
+rvalues = np.array([0.889,0.889,0.917,0.694]) #,0.59,0.69]) #Deterministe, CNN PR, CNN PS, VGG PR, VGG PS
 print("Asymptote",f(rvalues))
 sm = softmax(f(rvalues))
 print("Softmax",np.round(sm * 100).astype(int))
