@@ -5,7 +5,7 @@ block_cipher = None
 #Adding h5
 #https://pyinstaller.readthedocs.io/en/stable/spec-files.html#adding-files-to-the-bundle
 
-a = Analysis(['predict.py'],
+a = Analysis(['dist/predict.py'],
              pathex=[],
              binaries=[],
              datas=[

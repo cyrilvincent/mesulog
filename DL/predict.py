@@ -4,8 +4,11 @@ import io
 import h5py
 import Crypto.Cipher.AES as aes  #pip install pycryptodome
 import argparse
-
 import os
+
+#pip install pyarmor
+#pip install pyinstaller
+
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 copyright = b"Mesulog 2020"
