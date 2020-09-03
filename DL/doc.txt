@@ -10,6 +10,7 @@ www.CyrilVincent.com
 - Usage :
     predict -h to get help
     example : predict primage.jpg psimage.jpg => generate output.csv
+    To disable warnings : predict primage.jpg psimage.jpg 2> log.txt
 - Source code :
     - predict.py : source code of predict.exe, tested with Python 3.7 & Tensorflow 2.2 & 2.3 on Windows 10 & Linux
         pip install pycryptodome
@@ -35,5 +36,8 @@ www.CyrilVincent.com
         cipher : cipher the source code by bloc
     - pyinstaller --noconfirm predict.spec
         Generate the exe file in dist/predict
+    - md dist\predict\pytransform\platforms\windows\x86_64
+    - copy dist\pytransform\_pytransform.dll dist\predict\pytransform\platforms\windows\x86_64
     - cp mv?.dll dist/predict
+    - Alternative : compile in one file, very slow, using predict1.spec
 
