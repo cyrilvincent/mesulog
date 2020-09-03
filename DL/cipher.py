@@ -10,8 +10,6 @@ with open(args.src,"rb") as f:
 key = b'Mesulog & Cyril!'
 nonce=b'\xa1TD\xdc\xde\x0b\xfc\xc8\xa1\xdc()DuZb'
 cipher = aes.new(key, aes.MODE_EAX,nonce=nonce)
-# nonce = cipher.nonce
-# print(nonce)
 print(f"Cipher {args.src}")
 ciphertext, tag = cipher.encrypt_and_digest(data)
 print(f"Generate {args.dest}")

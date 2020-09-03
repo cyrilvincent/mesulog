@@ -1,0 +1,39 @@
+Predict PR & PS Documentation
+=============================
+www.CyrilVincent.com
+03/09/2020
+- Prerequesites :
+    Tested on Windows 10
+    Intel processor with AVX instruction set
+- Install :
+    Simply dezip predict.zip file to install
+- Usage :
+    predict -h to get help
+    example : predict primage.jpg psimage.jpg => generate output.csv
+- Source code :
+    - predict.py : source code of predict.exe, tested with Python 3.7 & Tensorflow 2.2 & 2.3 on Windows 10 & Linux
+        pip install pycryptodome
+    - cipher.py : cipher files with AES 128 bits
+        cipher.py -h to get help
+        You must cipher all h5 files, names of cipher files are hardcoded with a non speaking name to be obfuscated
+        Types :
+            - cipher.py vggmodel_PR.h5 mv1.dll
+            - cipher.py vggmodel_PS.h5 mv2.dll
+            - cipher.py cnnmodel_PR.h5 mv3.dll
+            - cipher.py cnnmodel_PS.h5 mv4.dll
+- Obfuscating the code with pyarmor
+    - pip install pyarmor
+    - pyarmor o predict.py
+    The obfuscate file is generated in dist/predict.py
+- Compile with pyinstaller
+    - pip install pyinstaller
+    - predict.spec : meta parameters for pyinstaller
+        Very difficult to debug
+        Highly coupled with the version of TF
+        datas : copy 2 files that pyinstaller does not automatically detect
+        hidden_imports : import 2 modules that pyinstaller does not automatically detect
+        cipher : cipher the source code by bloc
+    - pyinstaller --noconfirm predict.spec
+        Generate the exe file in dist/predict
+    - cp mv?.dll dist/predict
+
